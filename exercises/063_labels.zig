@@ -115,8 +115,8 @@ pub fn main() void {
             // (Remember that want_it will be the index number of
             // the ingredient based on its position in the
             // required ingredient list for each food.)
-            const found = for (wanted_ingredients) |want_it| {
-                if (required_ingredient == want_it) break true;
+            const found = food_found: for (wanted_ingredients) |want_it| {
+                if (required_ingredient == want_it) break :food_found true;
             } else false;
 
             // We did not find this required ingredient, so we
